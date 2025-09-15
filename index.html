@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator liczb</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Generator liczb</h1>
+        </header>
+
+        <main>
+            <div class="generator-section">
+                <button id="generateBtn" class="btn btn--primary btn--lg">
+                    <span class="btn-text">Generuj liczby</span>
+                    <div class="loading-spinner hidden"></div>
+                </button>
+            </div>
+
+            <div id="resultsSection" class="results-section hidden">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>Wyniki generowania</h2>
+                    </div>
+                    <div class="card__body">
+                        <div class="table-container">
+                            <table class="results-table vertical-table">
+                                <thead>
+                                    <tr>
+                                        <th>Indeks</th>
+                                        <th>Wartość</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-index="0">
+                                        <td class="index-cell">0</td>
+                                        <td class="value-cell" id="val-0"></td>
+                                    </tr>
+                                    <tr data-index="1">
+                                        <td class="index-cell">1</td>
+                                        <td class="value-cell" id="val-1"></td>
+                                    </tr>
+                                    <tr data-index="2">
+                                        <td class="index-cell">2</td>
+                                        <td class="value-cell" id="val-2"></td>
+                                    </tr>
+                                    <tr data-index="3">
+                                        <td class="index-cell">3</td>
+                                        <td class="value-cell" id="val-3"></td>
+                                    </tr>
+                                    <tr data-index="4">
+                                        <td class="index-cell">4</td>
+                                        <td class="value-cell" id="val-4"></td>
+                                    </tr>
+                                    <tr data-index="5">
+                                        <td class="index-cell">5</td>
+                                        <td class="value-cell" id="val-5"></td>
+                                    </tr>
+                                    <tr data-index="6">
+                                        <td class="index-cell">6</td>
+                                        <td class="value-cell" id="val-6"></td>
+                                    </tr>
+                                    <tr data-index="7">
+                                        <td class="index-cell">7</td>
+                                        <td class="value-cell" id="val-7"></td>
+                                    </tr>
+                                    <tr data-index="8">
+                                        <td class="index-cell">8</td>
+                                        <td class="value-cell" id="val-8"></td>
+                                    </tr>
+                                    <tr data-index="9">
+                                        <td class="index-cell">9</td>
+                                        <td class="value-cell" id="val-9"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Liczba prób:</span>
+                                <span id="attemptsCount" class="stat-value">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="status status--success">✓ Wszystkie warunki spełnione</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Warunki generowania</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="conditions-list">
+                            <div class="condition-item">
+                                <span class="condition-number">1.</span>
+                                <span class="condition-text">Brak powtórzeń - każda liczba 0-9 występuje dokładnie raz</span>
+                            </div>
+                            <div class="condition-item">
+                                <span class="condition-number">2.</span>
+                                <span class="condition-text">Brak fixed points - liczba na pozycji i nie może być równa i</span>
+                            </div>
+                        </div>
+                        <div class="algorithm-info">
+                            <h4>Informacje o algorytmie</h4>
+                            <p>Używa algorytmu Fisher-Yates shuffle z retry loop. Średnio potrzeba ~2.7 prób do znalezienia derangement (prawdopodobieństwo ~37%).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
